@@ -1,0 +1,33 @@
+version: '3.8'
+services:
+  training-db:
+    image: postgres:14
+    ports:
+      - 5432:5432
+    container_name: postgres
+    environment:
+      - POSTGRES_USER=training
+      - POSTGRES_PASSWORD=training
+      - POSTGRES_DB=training
+    networks:
+      - dev-network
+    volumes:
+      - training-db-data:/var/lib/postgresql/data
+      - ./setup/init.pg.sql:/docker-entrypoint-initdb.d/init.sql
+
+  pgadmin:
+    container_name: pgadmin4_container
+    image: dpage/pgadmin4
+    environment:
+      PGADMIN_DEFAULT_EMAIL: training@training.com
+      PGADMIN_DEFAULT_PASSWORD: training
+    networks:
+      - dev-network
+    ports:
+      - "5050:80"
+
+networks:
+  dev-network:
+    name: dev-network
+volumes:
+  training-db-data:
