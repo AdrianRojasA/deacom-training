@@ -1,0 +1,15 @@
+{
+  "mcpServers": {
+    "postgres-training": {
+      "command": "node",
+      "args": ["ABSOLUTE_PATH_TO/mcp-postgres/dist/index.js"],
+      "env": {
+        "PG_HOST": "localhost",
+        "PG_PORT": "5432",
+        "PG_USER": "training",
+        "PG_PASSWORD": "training",
+        "PG_DATABASE": "training"
+      }
+    }
+  }
+}

@@ -1,0 +1,42 @@
+---
+description: C# naming prefixes and required helper function usage
+globs: **/*.cs
+alwaysApply: false
+---
+
+# C# Naming And Helper Standards
+
+Follow these standards when writing or refactoring C# code.
+
+## Variable Names
+
+Use camelCase with a two-letter prefix: first letter = scope, second letter = data type.
+
+- Scope prefix: `g` global, `c` class, `p` parameter, `l` local
+- Type prefix: `c` character/string, `n` numeric, `l` logical, `d` date, `a` array, `o` object, `t` time, `v` cursor, `s` list, `f` function, `e` enum/enumerable, `r` data row
+
+Examples: `lcCustomerName`, `lnQuantity`, `plIsActive`, `coOrder`, `lsItems`.
+
+## Cursor Names
+
+- Prefix cursor names with `c`
+- Prefix editing cursors with `e` when they edit a subset of a parent form cursor
+
+## Control Flow Braces
+
+- Always use braces (`{}`) for `if` and `else` blocks, even for single-line statements.
+- This applies to all `if`, `else if`, and `else` branches.
+
+## Comments
+
+- Use the `//--` prefix at the beginning of comments (e.g. `//-- Use ratio to top-level FG so job line qty matches BOM.`).
+- This convention identifies in-line and block comments that describe intent or non-obvious behavior.
+
+## Required Helper Functions
+
+- Use `RoundAFZ()` extension method instead of `Math.Round()`
+- For FoxPro `TRANSFORM()` conversions, use `BaseFunctions.Formatxxx()` (or `FormattedNumber` on `SalesOrder`, `PurchaseOrder`, and `Job` when applicable)
+- For string comparisons, use `EqualsICIW()`; for multiple values, use `InListICIW()`
+- To check empty strings, use `String.IsNullOrWhitespace()`
+- Use `DataAccessMethods.GetDate()` instead of `DateTime.Now` or `Today`
+- For `SqlDateTime` to string, use `ToISOString()` and wrap with apostrophes (`'`) for SQL Server or pound signs (`#`) for `DataView.Filter`
