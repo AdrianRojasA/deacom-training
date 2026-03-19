@@ -44,10 +44,11 @@ namespace DeacomTraining.Service
 
         public void IncreaseQuantity(Entry entry)
         {
-            var facilities = memoryContext.MakeCopy("facilities");
-
             string query = "SELECT * FROM tnitem ";
             string identify = string.Empty;
+            string quantityColumn = string.Empty;
+            string idColumn = string.Empty;
+            string updateTable = string.Empty;
 
             switch (entry.DestinationType)
             {
@@ -55,11 +56,17 @@ namespace DeacomTraining.Service
                     query += "JOIN tnitmflty ON tnitem.it_id = tnitmflty.if_itid " +
                         $"WHERE tnitem.it_code = '{entry.ItemCode}'";
                     identify = "if_fcid";
+                    quantityColumn = "if_quantity";
+                    idColumn = "if_id";
+                    updateTable = "tnitmflty";
                     break;
                 case 1: //-- 1 is a warehouse
-                    query += "JOIN tnitmflty ON tnitem.it_id = tnitmflty.if_itid " +
+                    query += "JOIN tnitmwhs ON tnitem.it_id = tnitmwhs.iw_itid " +
                         $"WHERE tnitem.it_code = '{entry.ItemCode}'";
-                    identify = "if_whid";
+                    identify = "iw_whid";
+                    quantityColumn = "iw_quantity";
+                    idColumn = "iw_id";
+                    updateTable = "tnitmwhs";
                     break;
             }
 
@@ -68,11 +75,11 @@ namespace DeacomTraining.Service
             var filter = response.AsEnumerable().Where(filter =>
                 filter.Field<int>(identify) == entry.DestinationId).FirstOrDefault();
 
-            var quantity = filter.Field<decimal>("if_quantity");
+            var quantity = filter.Field<decimal>(quantityColumn);
             quantity += entry.AdditionalQuantity;
 
-            SqlExecute.ExecuteCommand("UPDATE tnitmflty SET if_quantity=( " + quantity + " ) " +
-                "WHERE tnitmflty.if_id=" + filter.Field<int>("if_id"));
+            SqlExecute.ExecuteCommand($"UPDATE {updateTable} SET {quantityColumn}={quantity} " +
+                $"WHERE {updateTable}.{idColumn}={filter.Field<int>(idColumn)}");
         }
 
     }
