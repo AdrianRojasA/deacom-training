@@ -1,34 +1,61 @@
 ﻿using DeacomTraining.BusinessClasses;
-using DeacomTraining.POCOs;
 using DeacomTraining.Service;
-using Microsoft.AspNetCore.Http;
+using DeacomTraining.Data;
 using Microsoft.AspNetCore.Mvc;
 
 namespace DeacomTraining.Controllers
 {
-    [Route("[controller]")]
+    [Route("api/[controller]")]
     [ApiController]
     public class ItemController : ControllerBase
     {
-        [HttpGet()]
-        public IEnumerable<Item> GetAll()
+        [HttpGet]
+        public List<Item> GetAllItems()
         {
-            ItemService service = new ItemService();
-            return service.GetAll();
+            var items = new List<Item>();
+            var connection = DBFactory.GetConnection();
+            var dtItems = connection.ExecuteCommand($"SELECT * FROM tnitem");
+            
+            if (dtItems != null && dtItems.Rows.Count > 0)
+            {
+                foreach (DataRow dr in dtItems.Rows)
+                {
+                    items.Add(new Item 
+                    { 
+                        item_id = (int)dr["item_id"],
+                        item_name = (string)dr["item_name"],
+                        item_desc = (string)dr["item_desc"]
+                    });
+                }
+            }
+            return items;
         }
 
-        [HttpGet("TypeId/{typeId}")]
-        public IEnumerable<Item> GetAllByType(int typeId)
+        [HttpPost]
+        public void CreateItem(Item lcItem)
         {
-            ItemService service = new ItemService();
-            return service.GetAllByType(typeId);
+            SqlExecute.ExecuteCommand($"INSERT INTO tnitem (item_name, item_desc) " +
+                $"VALUES ('{lcItem.item_name}', '{lcItem.item_desc}')");
         }
 
-        [HttpPost("Entry")]
-        public void IncreaseQuantity(Entry entry)
+        [HttpGet("{id}")]
+        public Item GetItemById(int id)
         {
-            ItemService service = new ItemService();
-            service.IncreaseQuantity(entry);
+            var connection = DBFactory.GetConnection();
+            var dtItem = connection.ExecuteCommand($"SELECT * FROM tnitem WHERE item_id = {id}");
+            
+            if (dtItem.Rows.Count > 0)
+            {
+                var dr = dtItem.Rows[0];
+                return new Item 
+                { 
+                    item_id = (int)dr["item_id"],
+                    item_name = (string)dr["item_name"],
+                    item_desc = (string)dr["item_desc"]
+                };
+            }
+            
+            return null;
         }
     }
 }
