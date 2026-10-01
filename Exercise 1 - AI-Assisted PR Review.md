@@ -1,121 +1,89 @@
-# Exercise 1: AI-Assisted PR Review & Architectural Decisions
-## DeacomTraining Clean Architecture Review
+# Exercise 1: AI-Assisted PR Review
 
-**Duration:** 15 minutes  
-**Format:** Rapid timed PR review with AI assistance  
-**Objective:** Quickly identify architectural violations and make informed decisions about what's critical vs. what can wait.
+**Duration:** 20 minutes  
+**Format:** Live PR review with your AI assistant. Talk aloud while you work.
 
 ---
 
-## 🎯 The Scenario
+## The Scenario
 
-A developer submitted a PR attempting to refactor the DeacomTraining project. The PR includes:
-- Changes to `Controllers/ItemController.cs`
-- Changes to `Service/ItemService.cs`  
-- Changes to `Controllers/FacilityController.cs`
-- A NEW `Repositories/ItemRepository.cs` file
+A teammate opened a PR on this branch (`feature/sloppy-architecture-review`) that "refactors items and facilities". It touches:
 
-**Your Job:** Rapidly assess whether these changes align with the existing architecture (defined in CLAUDE.md). Identify what's critical to block and what can be discussed or fixed later.
+- `src/DeacomTraining/Controllers/ItemController.cs`
+- `src/DeacomTraining/Service/ItemService.cs`
+- `src/DeacomTraining/Controllers/FacilityController.cs`
+- `src/DeacomTraining/Repositories/ItemRepository.cs` (new file)
 
----
-
-## 📋 Your Task (15 minutes)
-
-**Deliver:**
-1. **Blocker Assessment** — Which files/changes cannot merge in their current form? (Why?)
-2. **Conversation Starters** — 1-2 key PR comments on the most critical issues
-3. **Go/No-Go Decision** — Can this PR proceed with feedback, or must it be rejected?
+You are the reviewer. Decide whether it can merge.
 
 ---
 
-## ⚡ Rapid Workflow
+## Deliverables
 
-### Step 1: Baseline (2 minutes)
-- Get familiar with the project and find information about the architecture of what each layer should do
-
-### Step 2: Scan All Changed Files (3 minutes)
-Look for:
-- Logic changes
-- Wrong patterns
-- New patterns that weren't approved
-
-### Step 3: Focus on Blockers (7 minutes)
-Examine the files and look for any critical issues:
-- **ItemController.cs** - What should be in this layer?
-- **ItemRepository.cs** - What should be in this layer?
-- **Security** - Is there any security concerns?
-
-For each blocker, note:
-- **File and line(s)**
-- **What's wrong**
-- **Why it's critical** (references CLAUDE.md or standards)
-
-### Step 4: Write 1-2 Key Comments (2 minutes)
-Draft the most important PR comment (not all of them):
-
-
-### Step 5: Make the Call (1 minute)
-- **Request changes** if there are blockers
-- **Approve with comments** if it's just architectural style/learning
-- Explain your reasoning to the interviewer
-
+1. **Decision:** Approve, Approve with comments, or Request changes
+2. **Blockers:** The issues that stop the merge, each with file, what is wrong, and why it matters
+3. **One PR comment:** Written as you would post it to the author
 
 ---
 
-## ✅ What We're Evaluating
+## Steps
 
-| Criterion | What We're Looking For |
-|-----------|------------------------|
-| **Speed** | Can you make good architectural decisions under time pressure? |
-| **Pattern Recognition** | Do you quickly spot what violates the existing architecture? |
-| **Critical Thinking** | Do you distinguish blockers from style issues? |
-| **Communication** | Can you articulate why something is a blocker in 1-2 sentences? |
-| **Judgment** | Do you defer to standards or make nuanced decisions? |
-| **Pragmatism** | Do you understand which issues kill a PR vs. which can iterate? |
-
----
-
-## 🔗 Key References
-
-- **Architecture:** `CLAUDE.md` — Each layer's responsibilities
-- **Current Patterns:** `Controllers/WarehouseController.cs`, `Service/WarehouseService.cs`
-- **Naming:** `.cursor/rules/csharp-naming-and-helper-standards.mdc`
-
----
-
-## 🚀 Getting Started
+### 1. Check that it builds (3 min)
 
 ```bash
-cd c:\Users\adrian.rojas\repos\deacom-training
-git checkout feature/sloppy-architecture-review
-git diff main..feature/sloppy-architecture-review --stat  # See what changed
-git diff main..feature/sloppy-architecture-review | head -200  # Scan first changes
+cd src/DeacomTraining
+dotnet build
 ```
 
+Note the result before reading any code.
+
+### 2. Understand the change (5 min)
+
+```bash
+git diff main...HEAD --stat -- src
+git diff main...HEAD -- src
+```
+
+- Ask your AI assistant to summarize what the PR changes.
+- Compare the PR with how the existing code is layered. For example, `WarehouseController` calls `WarehouseService`, and the service reaches the database through `SqlExecute` and `Cursor`.
+- Check the summary against the diff yourself. Don't take it on trust.
+
+### 3. Sort the findings (7 min)
+
+Split what you find into two lists:
+
+- **Blockers:** Must be fixed before merge
+- **Follow-ups:** Worth raising, but they should not hold the PR
+
+Areas to check:
+
+- Does it build and run?
+- Does it remove or rename anything existing clients call?
+- How is SQL built from request data?
+- Does each layer do its own job?
+- Does the new file fit the existing patterns, and is it used?
+
+### 4. Decide and comment (5 min)
+
+- Make the call and explain it in one or two sentences.
+- Write the most important PR comment: what is wrong, why, and what you want changed.
+
 ---
 
-## 📝 Your Deliverable
+## References in the Repo
 
-At the end of 15 minutes, be ready to tell the interviewer:
-
-1. **Can this PR merge?** (Yes / Request Changes)
-2. **What's the blocker?** (1-2 sentence explanation)
-3. **What would you tell the developer?** (1-2 key PR comments)
-4. **Why?** (Reference the architectural standard)
-
-## ⏱️ Time Allocation
-
-- Baseline: 2 min
-- Scan diffs: 3 min
-- Focus on blockers: 7 min
-- Write key comments: 2 min
-- Make the call: 1 min
+- Existing pattern: `Controllers/WarehouseController.cs` and `Service/WarehouseService.cs`
+- Database schema: `setup/init.pg.sql`
+- Code standards: `.cursor/rules/csharp-naming-and-helper-standards.mdc`
 
 ---
 
-## 🎤 During the Exercise
+## Time
 
-- **Work aloud** — talk through your reasoning
-- **Use AI for quick clarification** — *"Is this controller pattern correct per CLAUDE.md?"*
-- **Stay focused** — don't get lost in minor style issues
-- **Make a call** — Request Changes or Approve with Comments, with clear reasoning
+| Step | Time |
+|------|------|
+| Check that it builds | 3 min |
+| Understand the change | 5 min |
+| Sort the findings | 7 min |
+| Decide and comment | 5 min |
+| **Total** | **20 min** |
