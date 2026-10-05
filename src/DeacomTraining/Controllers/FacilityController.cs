@@ -8,36 +8,31 @@ namespace DeacomTraining.Controllers
     [ApiController]
     public class FacilityController : ControllerBase
     {
-        [HttpGet("Id/{id}")]
-        public Facility GetFacility(int id)
-        {
-            FacilityService service = new FacilityService();
+        private FacilityService _service;
 
-            Facility facility = service.GetOne(id);
+        public FacilityController()
+        {
+            _service = new FacilityService();
+        }
+
+        [HttpGet]
+        public List<Facility> GetAll()
+        {
+            return _service.GetAllFacilities();
+        }
+
+        [HttpPost]
+        public Facility Create(Facility facility)
+        {
+            _service.InsertFacility(facility);
             return facility;
-
         }
 
-        [HttpGet()]
-        public IEnumerable<Facility> GetAllFacilities()
+        [HttpPut("{id}")]
+        public void Update(int id, Facility facility)
         {
-            FacilityService service = new FacilityService();
-
-            IEnumerable<Facility> facilities = service.GetAll();
-            return facilities;
+            facility.fac_id = id;
+            _service.UpdateFacility(facility);
         }
-
-
-        [HttpPost()]
-        public bool InsertOne(Facility facility)
-        {
-            FacilityService service = new FacilityService();
-
-            var res = service.InsertOne(facility);
-            return res;
-        }
-
-
-
     }
 }
