@@ -1,4 +1,5 @@
 ﻿using DeacomTraining.Service;
+using DeacomTraining.POCOs;
 using Microsoft.AspNetCore.Mvc;
 
 namespace DeacomTraining.Controllers
@@ -12,7 +13,7 @@ namespace DeacomTraining.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpPost()]
-        public ActionResult Login()
+        public ActionResult Login(LoginRequest request)
         {
             LoginService service = new LoginService();
             bool success = service.Load();
