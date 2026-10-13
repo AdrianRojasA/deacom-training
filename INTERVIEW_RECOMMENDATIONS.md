@@ -1,138 +1,135 @@
 # Interview Evaluations & Development Recommendations
-## Training Program - October 2026
+## Training Program Template
 
 ---
 
 ## 📋 Summary of Evaluations
 
-This document consolidates technical interview evaluations and personalized development plans for mid-level role transition.
+This document consolidates technical interview evaluations and personalized development plans for mid-level role transition. Use this template for evaluating multiple candidates with standardized criteria.
 
 ---
 
-## 🎯 Luis Fernando Arce Torrez
+## 🎯 Candidate A: [Name]
 
-### Verdict: ✅ READY FOR MID-LEVEL
+### Verdict: [SELECT ONE] ✅ READY | ⚠️ READY WITH CONSOLIDATION | ❌ NEEDS DEVELOPMENT
 
-**Status**: Approved with 2-week structured consolidation
+**Status**: [Brief evaluation status statement]
 
-Luis demonstrated significant improvement between interviews and is ready to transition to a mid-level role. He shows strong technical foundation, excellent problem-solving with AI, and solid communication skills.
+[2-3 sentence executive summary of candidate's position, key strengths, and development focus]
 
 ### Key Strengths ✅
-- **OOP & Design Patterns**: Strong understanding of SRP and architectural principles
-- **Problem-Solving with AI**: Excellent practical performance in exercises
-- **Communication**: Excellent skills, proactive in asking clarifying questions
-- **Learning Disposition**: Shows genuine interest and receptiveness to feedback
-- **Technical Foundation**: Solid C#, SQL, and LINQ understanding
+- **[Technical Area 1]**: [Description of demonstrated strength]
+- **[Technical Area 2]**: [Description of demonstrated strength]
+- **[Technical Area 3]**: [Description of demonstrated strength]
+- **[Technical Area 4]**: [Description of demonstrated strength]
+- **[Technical Area 5]**: [Description of demonstrated strength]
 
 ### Areas for Development 🎯
 
-1. **AI Agentic Concepts** (Primary Focus)
-   - LLM Model vs. Agent Harness architecture
-   - Context construction sources: RAG, Memory, Skills, MCP
-   - Validation with guardrails and human gates
-   - Understanding context levels: hot, warm, cold
+1. **[Primary Focus Area]** (Primary Focus)
+   - [Specific concept or skill to develop]
+   - [Specific concept or skill to develop]
+   - [Specific concept or skill to develop]
+   - [Specific concept or skill to develop]
 
-2. **Professionalism with External Clients**
-   - Manage nervousness and informal language ("pintudo")
-   - Maintain controlled, professional tone in formal settings
-   - Especially important with Anglo clients who prefer direct communication
+2. **[Secondary Focus Area]** (Secondary Focus)
+   - [Specific concept or skill to develop]
+   - [Specific concept or skill to develop]
+   - [Specific concept or skill to develop]
 
-3. **LINQ Deferred Execution**
-   - Clarify immediate vs. deferred operator execution
-   - Real-world practice with complex queries
+3. **[Tertiary Focus Area]** (Optional)
+   - [Specific concept or skill to develop]
+   - [Specific concept or skill to develop]
 
-### 2-Week Development Plan
+### Development Plan - [X] Weeks
 
-**Week 1: Agentic Foundations**
-- Session 1: LLM vs. Harness architecture (3h)
-- Session 2: Context sources - RAG, Memory, Skills, MCP (3h)
-- Session 3: Validation, guardrails and human gates (2h)
+**Week 1: [Theme]**
+- Session 1: [Topic] (Xh)
+- Session 2: [Topic] (Xh)
+- Session 3: [Topic] (Xh)
 - Daily practical exercises with feedback
 
-**Week 2: Application & Refinement**
-- Apply agentic concepts to real exercises (5h)
-- LINQ deferred execution deep dive (2h)
-- Professional communication practice with clients (2h)
-- Final competency validation
+**Week 2: [Theme]**
+- [Focus area 1] (Xh)
+- [Focus area 2] (Xh)
+- [Focus area 3] (Xh)
+- Real project practices (Xh)
 
-**Format**: 1-to-1 mentoring with Adrian Rojas or Adhemar Botelo
+**Week 3+**: [If applicable, additional weeks]
+- [Focus area] (Xh)
+- [Focus area] (Xh)
+- [Focus area] (Xh)
 
-**Expected Outcome**: Fully ready for mid-level responsibilities with all competencies aligned
+**Format**: 1-to-1 mentoring with [Mentor Name], code reviews, [frequency] check-ins
+
+**Expected Outcome**: [Specific skills/abilities candidate will have after consolidation]
 
 ---
 
-## 🎯 Manuel Alay Larrea
+## 🎯 Candidate B: [Name]
 
-### Verdict: ✅ READY FOR MID-LEVEL
+### Verdict: [SELECT ONE] ✅ READY | ⚠️ READY WITH CONSOLIDATION | ❌ NEEDS DEVELOPMENT
 
-**Status**: Approved with 3-week concept consolidation
+**Status**: [Brief evaluation status statement]
 
-Manuel brings strong technical experience and solid architectural foundation. He is ready to take a mid-level role as a challenge, requiring structured consolidation to master tool proficiency and concept differentiation.
+[2-3 sentence executive summary of candidate's position, key strengths, and development focus]
 
 ### Key Strengths ✅
-- **General Technical Experience**: Solid foundation in architecture and design
-- **Agentic Concepts**: Understands context levels (hot/warm/cold), subagents, optimization
-- **Communication**: Receptive to feedback with genuine learning interest
-- **Architectural Thinking**: Good vision for design and system optimization
-- **Execution Capability**: Can effectively implement C# and .NET code
+- **[Technical Area 1]**: [Description of demonstrated strength]
+- **[Technical Area 2]**: [Description of demonstrated strength]
+- **[Technical Area 3]**: [Description of demonstrated strength]
+- **[Technical Area 4]**: [Description of demonstrated strength]
+- **[Technical Area 5]**: [Description of demonstrated strength]
 
 ### Areas for Development 🎯
 
-1. **Concept Differentiation** (Primary Focus)
-   - Rules vs. Hooks vs. Skills vs. MCP vs. CLI Tools
-   - When to use each mechanism
-   - Specific inputs/outputs for each
-   - Deterministic vs. non-deterministic behavior
-   - Integration in claude.md and agents.md
+1. **[Primary Focus Area]** (Primary Focus)
+   - [Specific concept or skill to develop]
+   - [Specific concept or skill to develop]
+   - [Specific concept or skill to develop]
 
-2. **Tool Mastery**
-   - Visual Studio + Claude Tabs: efficient navigation
-   - Managing agents and subagents
-   - Passing context between components
-   - Context and metrics inspection
+2. **[Secondary Focus Area]** (Secondary Focus)
+   - [Specific concept or skill to develop]
+   - [Specific concept or skill to develop]
 
-3. **Result Validation**
-   - Reviewing and measuring agent performance
-   - Debugging when results aren't expected
-   - Confidence metrics in outputs
+3. **[Tertiary Focus Area]** (Optional)
+   - [Specific concept or skill to develop]
+   - [Specific concept or skill to develop]
 
-### 3-Week Consolidation Plan
+### Development Plan - [X] Weeks
 
-**Week 1: Concept Differentiation**
-- Rules vs. Hooks vs. Skills differentiation (3h)
-- MCP vs. CLI Tools - inputs/outputs and use cases (3h)
-- claude.md vs. agents.md hierarchy (2h)
-- Determinism in agents (2h)
-- Practical exercises (5h)
+**Week 1: [Theme]**
+- Session 1: [Topic] (Xh)
+- Session 2: [Topic] (Xh)
+- Session 3: [Topic] (Xh)
+- Daily practical exercises with feedback
 
-**Week 2: Tool Mastery**
-- Visual Studio + Claude Tabs workflow (3h)
-- Agents/Subagents: architecture and communication (3h)
-- Passing context between components (2h)
-- Context and metrics inspection (2h)
-- Real project practices (5h)
+**Week 2: [Theme]**
+- [Focus area 1] (Xh)
+- [Focus area 2] (Xh)
+- [Focus area 3] (Xh)
+- Real project practices (Xh)
 
-**Week 3: Integration & Validation**
-- End-to-end project applying all concepts (8h)
-- Performance analysis and debugging (2h)
-- Confidence metrics in results (2h)
+**Week 3+**: [If applicable, additional weeks]
+- [Focus area] (Xh)
+- [Focus area] (Xh)
 
-**Format**: 1-to-1 mentoring with Adrian Rojas, code reviews, daily check-ins (first 10 days)
+**Format**: 1-to-1 mentoring with [Mentor Name], code reviews, [frequency] check-ins
 
-**Expected Outcome**: Fully prepared to correctly use all mechanisms, navigate agents with confidence, validate and measure results with solid metrics, start mid-level projects with growing autonomy
+**Expected Outcome**: [Specific skills/abilities candidate will have after consolidation]
 
 ---
 
 ## 📊 Comparative Analysis
 
-| Aspect | Luis | Manuel | Notes |
-|--------|------|--------|-------|
-| **Ready for Mid-Level** | ✅ Yes | ✅ Yes | Both approved |
-| **Timeline to Ready** | 2 weeks | 3 weeks | Different focus areas |
-| **Core Strength** | Problem-solving + AI | Architecture + Design | Complementary skills |
-| **Primary Development** | Agentic concepts | Tool mastery | Different paths |
-| **Communication** | Excellent | Very Good | Both strong |
-| **Technical Depth** | Solid | Strong | Manuel slightly deeper |
+| Aspect | Candidate A | Candidate B | Candidate C | Notes |
+|--------|-------------|-------------|-------------|-------|
+| **Ready for Mid-Level** | ✅/⚠️/❌ | ✅/⚠️/❌ | ✅/⚠️/❌ | [Comparative insight] |
+| **Timeline to Ready** | [X weeks] | [X weeks] | [X weeks] | [Varies by focus] |
+| **Core Strength** | [Area] | [Area] | [Area] | [Complementary skills] |
+| **Primary Development** | [Focus] | [Focus] | [Focus] | [Different paths] |
+| **Communication** | [Level] | [Level] | [Level] | [Skill assessment] |
+| **Technical Depth** | [Level] | [Level] | [Level] | [Comparative depth] |
 
 ---
 
@@ -141,44 +138,98 @@ Manuel brings strong technical experience and solid architectural foundation. He
 ### Mentoring Approach
 - 1-to-1 sessions for personalized feedback
 - Code review on all exercises
-- Daily check-ins for first 10-14 days
+- [Frequency] check-ins (daily/twice-weekly/as-needed)
 - Weekly progress assessments
 - Clear success criteria before each phase
 
-### Success Criteria
-- **Luis**: Demonstrates clear understanding of LLM vs. Harness, can apply RAG/Memory/Skills/MCP correctly, validates agent responses with confidence
-- **Manuel**: Can differentiate Rules/Hooks/Skills/MCP usage precisely, navigates agents efficiently, validates results with metrics
+### Success Criteria Template
+
+For each candidate, define:
+
+**[Candidate Name]**:
+- Demonstrates clear understanding of [concept 1]
+- Can apply [concept 2] correctly with [metric/validation]
+- Validates [skill area] with [evidence type]
+- Communicates [topic] with [clarity level/audience]
 
 ### Review Schedule
-- **Week 1**: Daily check-ins + weekly review
-- **Week 2**: Twice-weekly check-ins + progress assessment
-- **Week 3** (Manuel only): As-needed check-ins + final validation
+
+| Phase | Check-in Frequency | Review Type | Approval Criteria |
+|-------|-------------------|-------------|------------------|
+| Week 1 | [Frequency] | [Type] | [Criteria] |
+| Week 2 | [Frequency] | [Type] | [Criteria] |
+| Week 3+ | [Frequency] | [Type] | [Criteria] |
 
 ---
 
-## 📅 Timeline
+## 📅 Overall Timeline
 
-- **Week of Oct 13**: Start Luis on Week 1 agentic foundations
-- **Week of Oct 20**: Luis completes Week 1 + Manuel starts Week 1
-- **Week of Oct 27**: Luis ready for role + Manuel in Week 2
-- **Week of Nov 3**: Manuel completes consolidation, both ready for assignments
-
----
-
-## 📝 Evaluation Details
-
-### Luis Interview Results
-- **2nd Interview Score**: POSITIVE - Significant improvement observed
-- **Key Feedback**: "estás bien para ir a una entrevista" (Adrian Rojas) - You're ready for an interview
-- **Evaluator Notes**: Adhemar Botelo confirmed no problems with AI problem-solving, strong exercise performance
-
-### Manuel Interview Results
-- **Interview Score**: STRONG - Ready with consolidation
-- **Key Feedback**: Shows great experience and overall knowledge
-- **Evaluator Notes**: Excellent communication, good architectural thinking, needs tool proficiency refinement
+- **Week of [Date]**: Start [Candidates] on Week 1
+- **Week of [Date]**: [Candidate A] completes Week 1 + [Candidate B] starts Week 1
+- **Week of [Date]**: [Candidate A] ready for role + [Candidate B] in Week 2
+- **Week of [Date]**: All candidates complete consolidation and ready for assignments
 
 ---
 
-**Document Created**: October 13, 2026  
-**Prepared by**: Adrian Rojas with Adhemar Botelo, Claudia Torrico  
-**Next Review**: October 20, 2026
+## 📝 Interview Details & Notes
+
+### [Candidate Name] Interview Results
+- **Interview Score**: [Rating/Result]
+- **Key Feedback**: [Relevant feedback quote]
+- **Evaluator Notes**: [Additional observations]
+- **Interview Date**: [Date]
+- **Evaluators**: [Names]
+
+### [Candidate Name] Interview Results
+- **Interview Score**: [Rating/Result]
+- **Key Feedback**: [Relevant feedback quote]
+- **Evaluator Notes**: [Additional observations]
+- **Interview Date**: [Date]
+- **Evaluators**: [Names]
+
+---
+
+## 🎓 General Assessment Rubric
+
+### For All Candidates
+
+| Category | Excellent | Good | Needs Work | Poor |
+|----------|-----------|------|-----------|------|
+| **Technical Knowledge** | [Description] | [Description] | [Description] | [Description] |
+| **Problem-Solving** | [Description] | [Description] | [Description] | [Description] |
+| **Communication** | [Description] | [Description] | [Description] | [Description] |
+| **Learning Disposition** | [Description] | [Description] | [Description] | [Description] |
+| **Practical Skills** | [Description] | [Description] | [Description] | [Description] |
+
+---
+
+## Notes for Future Use
+
+### Customization Guide
+
+1. **Replace placeholders**:
+   - `[Name]` → Actual candidate names
+   - `[X] Weeks` → Specific week counts (2, 3, 4, etc.)
+   - `[Topic]` → Specific technical topics covered in interview
+
+2. **Select verdict**:
+   - ✅ READY: Can start role immediately or with minimal prep
+   - ⚠️ READY WITH CONSOLIDATION: Approved with 2-4 week development plan
+   - ❌ NEEDS DEVELOPMENT: Requires substantial improvement before mid-level consideration
+
+3. **Define success criteria**:
+   - Be specific and measurable
+   - Reference observable behaviors or artifacts
+   - Link to role requirements
+
+4. **Customize development plans**:
+   - Tailor to candidate's specific gaps
+   - Include realistic timeframes
+   - Specify mentoring approach
+   - Define clear deliverables
+
+---
+
+**Template Created**: October 13, 2026  
+**Last Updated**: October 13, 2026  
+**For Use By**: Hiring & Training Teams
